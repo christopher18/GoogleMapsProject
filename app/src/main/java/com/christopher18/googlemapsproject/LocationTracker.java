@@ -4,8 +4,9 @@ import android.content.Context;
 import android.location.Location;
 
 /**
- * Created by chris on 8/14/16.
+ * Created by Chris Acker and inspired by Gabriel Sechan.
  */
+
 public interface LocationTracker {
     interface LocationUpdateListener{
         void onUpdate(Location oldLoc, long oldTime, Location newLoc, long newTime);

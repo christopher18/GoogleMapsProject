@@ -50,8 +50,6 @@ public class ProviderLocationTracker implements LocationListener, LocationTracke
 
     public void start(Context context) {
         if (!isRunning) {
-            // provider is on
-            isRunning = true;
             if (ContextCompat.checkSelfPermission(context,
                     Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -78,6 +76,8 @@ public class ProviderLocationTracker implements LocationListener, LocationTracke
                 }
             }
             lm.requestLocationUpdates(provider, MIN_UPDATE_TIME, MIN_UPDATE_DISTANCE, this);
+            // provider is on
+            isRunning = true;
             lastLocation = null;
             lastTime = 0;
         }
